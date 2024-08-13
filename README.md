@@ -17,3 +17,5 @@ FOR FUTURE
     a tie case scenario would be two dragon types as they are both 2x weakness to each other
 
     the winner of the game is decided by who wins most of the 6 matchups and if tied can rematch until a winner is decided.
+
+    can try to encorporate shiny pokemon to have a joker claus which auto wins unless matched against another shiny which will make the round matchup negate the shiny claus and treat both pokemon as normal sprites.
