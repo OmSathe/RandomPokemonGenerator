@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <button onclick="generatePokemon()">Click this to generate a random pokemon!</button><br>
-    <img src="" alt="Pokemon Sprite" id="pokemonSprite">
-
+    <nav class="navbar">
+        <ul class="navbar-links">
+            <li><a href="team.html">Random Pokemon Team Generator</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+    <h1>Random Pokémon Generator</h1>
+        <button onclick="generatePokemon()">Click this to generate a random pokemon!</button><br>
+        <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none;">
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

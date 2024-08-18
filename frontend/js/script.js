@@ -29,3 +29,32 @@ async function generatePokemon(){
         console.error(error);
     }
 }
+
+async function generatePokemonTeam(){
+    //function creates a team of 6 pokemon
+    try{
+        //loops to add a random pokemon into the team
+        for (let i = 0; i < 6; i++) {
+            randomPokemon = "https://pokeapi.co/api/v2/pokemon/" + String(getRandomInt(1,1025))
+
+            const response = await fetch(randomPokemon)
+
+            if(!response.ok){
+                throw new Error("could not fetch resource");
+            }
+
+            const data = await response.json();
+            const pokemonSprite = data.sprites.front_default;
+            //this line below will get each id from 1-6
+            const imgElement = document.getElementById(`pokemonImg${i + 1}`);
+
+            imgElement.src = pokemonSprite;
+            imgElement.style.display = "block";
+        }
+
+        //prints the team in a display of 6 pokemon sprites
+    }
+    catch(error){
+        console.error(error);
+    }
+}
