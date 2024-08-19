@@ -64,10 +64,12 @@ body {
 }
 
 .infoCard {
-    background-color: #aaaaaa;
+    background-color: #000000;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-weight: bold;
 }
 
 /* Pokémon grid */
