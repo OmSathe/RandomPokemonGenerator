@@ -13,9 +13,14 @@
         </ul>
     </nav>
     <div class="container">
-    <h1>Random Pokémon Generator</h1>
+        <h1>Random Pokémon Generator</h1>
         <button onclick="generatePokemon()">Click this to generate a random pokemon!</button><br>
-        <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none;">
+        <div class="pokemon-container">
+            <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none;">
+            <div class="infoCard">
+                <p id="pokemonName"></p>
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

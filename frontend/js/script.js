@@ -19,11 +19,16 @@ async function generatePokemon(){
         }
 
         const data = await response.json();
+
         const pokemonSprite = data.sprites.front_default;
         const imgElement = document.getElementById("pokemonSprite")
 
         imgElement.src = pokemonSprite;
         imgElement.style.display = "block";
+
+        //getting the info for infocard
+        const pokemonName = data.name;
+        document.getElementById("pokemonName").textContent = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
     }  
     catch(error){
         console.error(error);
@@ -50,6 +55,10 @@ async function generatePokemonTeam(){
 
             imgElement.src = pokemonSprite;
             imgElement.style.display = "block";
+
+            //getting the info for infocard
+            const pokemonName = data.name;
+            document.getElementById(`pokemonName${i + 1}`).textContent = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
         }
 
         //prints the team in a display of 6 pokemon sprites
