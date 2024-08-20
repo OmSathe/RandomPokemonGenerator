@@ -29,6 +29,11 @@ async function generatePokemon(){
         //getting the info for infocard
         const pokemonName = data.name;
         document.getElementById("pokemonName").textContent = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+
+        //changes visibility of info card
+        const infoCard = document.getElementById("infoCard");
+        infoCard.classList.remove("hidden");
+
     }  
     catch(error){
         console.error(error);
@@ -59,6 +64,10 @@ async function generatePokemonTeam(){
             //getting the info for infocard
             const pokemonName = data.name;
             document.getElementById(`pokemonName${i + 1}`).textContent = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+            
+            //changes visibility of info card
+            const infoCard = document.getElementById(`infoCard${i + 1}`);
+            infoCard.classList.remove("hidden");
         }
 
         //prints the team in a display of 6 pokemon sprites
