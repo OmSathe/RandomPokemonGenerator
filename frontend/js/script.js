@@ -28,7 +28,21 @@ async function generatePokemon(){
 
         //getting the info for infocard
         const pokemonName = data.name;
+        const pokemonTypings = data.types;
+        
+        //string which will be comma seperated with the pokemon typings
+        let pokemonTyping = "Type(s): ";
+
+        if (pokemonTypings.length == 2){
+            pokemonTyping += pokemonTypings[0].type.name.charAt(0).toUpperCase() + pokemonTypings[0].type.name.slice(1) + ", " + pokemonTypings[1].type.name.charAt(0).toUpperCase() + pokemonTypings[1].type.name.slice(1);
+        }
+        else {
+            pokemonTyping += pokemonTypings[0].type.name.charAt(0).toUpperCase() + pokemonTypings[0].type.name.slice(1);
+        }
+        
+        //updates the text content of the paragraph in the html
         document.getElementById("pokemonName").textContent = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+        document.getElementById("pokemonTyping").textContent = pokemonTyping;
 
         //changes visibility of info card
         const infoCard = document.getElementById("infoCard");
@@ -63,14 +77,26 @@ async function generatePokemonTeam(){
 
             //getting the info for infocard
             const pokemonName = data.name;
+            const pokemonTypings = data.types;
+
+            //string which will be comma seperated with the pokemon typings
+            let pokemonTyping = "Type(s): ";
+
+            if (pokemonTypings.length == 2){
+                pokemonTyping += pokemonTypings[0].type.name.charAt(0).toUpperCase() + pokemonTypings[0].type.name.slice(1) + ", " + pokemonTypings[1].type.name.charAt(0).toUpperCase() + pokemonTypings[1].type.name.slice(1);
+            }
+            else {
+                pokemonTyping += pokemonTypings[0].type.name.charAt(0).toUpperCase() + pokemonTypings[0].type.name.slice(1);
+            }
+
+            //updates the text content of the paragraph in the html
             document.getElementById(`pokemonName${i + 1}`).textContent = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
-            
+            document.getElementById(`pokemonTyping${i + 1}`).textContent = pokemonTyping;
+
             //changes visibility of info card
             const infoCard = document.getElementById(`infoCard${i + 1}`);
             infoCard.classList.remove("hidden");
         }
-
-        //prints the team in a display of 6 pokemon sprites
     }
     catch(error){
         console.error(error);
