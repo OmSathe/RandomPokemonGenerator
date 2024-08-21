@@ -6,7 +6,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-async function generatePokemon(){
+async function generatePokemon() {
 
     //chooses a random pokemon using their id number
     randomPokemon = "https://pokeapi.co/api/v2/pokemon/" + String(getRandomInt(1,1025))
@@ -54,7 +54,7 @@ async function generatePokemon(){
     }
 }
 
-async function generatePokemonTeam(){
+async function generatePokemonTeam() {
     //function creates a team of 6 pokemon
     try{
         //loops to add a random pokemon into the team
@@ -63,7 +63,7 @@ async function generatePokemonTeam(){
 
             const response = await fetch(randomPokemon)
 
-            if(!response.ok){
+            if(!response.ok) {
                 throw new Error("could not fetch resource");
             }
 
@@ -98,7 +98,7 @@ async function generatePokemonTeam(){
             infoCard.classList.remove("hidden");
         }
     }
-    catch(error){
+    catch(error) {
         console.error(error);
     }
 }
