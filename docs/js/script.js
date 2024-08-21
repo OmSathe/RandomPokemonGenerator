@@ -11,7 +11,7 @@ async function generatePokemon() {
     //chooses a random pokemon using their id number
     randomPokemon = "https://pokeapi.co/api/v2/pokemon/" + String(getRandomInt(1,1025))
 
-    try{
+    try {
         const response = await fetch(randomPokemon)
 
         if(!response.ok){
@@ -33,7 +33,7 @@ async function generatePokemon() {
         //string which will be comma seperated with the pokemon typings
         let pokemonTyping = "Type(s): ";
 
-        if (pokemonTypings.length == 2){
+        if (pokemonTypings.length == 2) {
             pokemonTyping += pokemonTypings[0].type.name.charAt(0).toUpperCase() + pokemonTypings[0].type.name.slice(1) + ", " + pokemonTypings[1].type.name.charAt(0).toUpperCase() + pokemonTypings[1].type.name.slice(1);
         }
         else {
@@ -49,14 +49,14 @@ async function generatePokemon() {
         infoCard.classList.remove("hidden");
 
     }  
-    catch(error){
+    catch(error) {
         console.error(error);
     }
 }
 
 async function generatePokemonTeam() {
     //function creates a team of 6 pokemon
-    try{
+    try {
         //loops to add a random pokemon into the team
         for (let i = 0; i < 6; i++) {
             randomPokemon = "https://pokeapi.co/api/v2/pokemon/" + String(getRandomInt(1,1025))
@@ -82,7 +82,7 @@ async function generatePokemonTeam() {
             //string which will be comma seperated with the pokemon typings
             let pokemonTyping = "Type(s): ";
 
-            if (pokemonTypings.length == 2){
+            if (pokemonTypings.length == 2) {
                 pokemonTyping += pokemonTypings[0].type.name.charAt(0).toUpperCase() + pokemonTypings[0].type.name.slice(1) + ", " + pokemonTypings[1].type.name.charAt(0).toUpperCase() + pokemonTypings[1].type.name.slice(1);
             }
             else {
